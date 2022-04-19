@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+    <p sec:authorize="isAuthenticated()"> Conteúdo para os autenticados na aplicação. </p>
+
+    <p sec:authorize="hasAnyAuthority('ADM')"> Conteúdo para administradores. </p>
+
+    <p><a th:href="@{/logout}">Fazer logout</a> </p>
+
+
+</body>
+</html>
